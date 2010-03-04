@@ -1,0 +1,123 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.esa.beam.maven</groupId>
+    <artifactId>maven-beam-gpf-archetype</artifactId>
+    <version>4.7-SNAPSHOT</version>
+    <name>Maven 2 Archetype Plugin for BEAM GPF Operators</name>
+    <description>A Maven 2 archetype for projects using BEAM Graph Processing Framework (GPF).</description>
+    <url>http://envisat.esa.int/beam</url>
+    <packaging>maven-plugin</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bc.ceres</groupId>
+            <artifactId>ceres-core</artifactId>
+            <version>0.10-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.esa.beam</groupId>
+            <artifactId>beam-core</artifactId>
+            <version>4.7-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.esa.beam</groupId>
+            <artifactId>beam-gpf</artifactId>
+            <version>4.7-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <scm>
+        <connection>scm:svn:https://www.brockmann-consult.de/svn/os/maven/trunk/maven-beam-gpf-archetype</connection>
+        <url>https://www.brockmann-consult.de/svn/os/maven/trunk/maven-beam-gpf-archetype</url>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>bc-mvn</id>
+            <name>Public Maven Repository at Brockmann-Consult</name>
+            <url>http://www.brockmann-consult.de/mvn/os</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bc-mvn-repo</id>
+            <name>Public Maven Repository at Brockmann-Consult</name>
+            <url>http://www.brockmann-consult.de/mvn/os</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>apache.org</id>
+            <name>Maven Plugin Snapshots</name>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <distributionManagement>
+        <repository>
+            <id>bc-mvn-repo</id>
+            <name>Public Maven Repository at Brockmann Consult</name>
+            <url>scp://apache.bc.local/bc-mvn-repo/os</url>
+        </repository>
+        <snapshotRepository>
+            <id>bc-mvn-repo</id>
+            <name>Public Maven Repository at Brockmann Consult</name>
+            <url>scp://apache.bc.local/bc-mvn-repo/os</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <debug>true</debug>
+                    <fork>false</fork>
+                    <encoding>ISO-8859-1</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

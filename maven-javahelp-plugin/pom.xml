@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bc.maven.plugins</groupId>
+    <artifactId>maven-javahelp-plugin</artifactId>
+    <packaging>maven-plugin</packaging>
+    <version>1.1-SNAPSHOT</version>
+
+    <name>Javahelp Maven Mojo</name>
+    <url>http://maven.apache.org</url>
+    <inceptionYear>2008</inceptionYear>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>bc-public</id>
+            <url>http://www.brockmann-consult.de/mvn/os</url>
+        </snapshotRepository>
+        <repository>
+            <id>bc-public</id>
+            <url>http://www.brockmann-consult.de/mvn/os</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>2.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.help</groupId>
+            <artifactId>javahelp</artifactId>
+            <version>2.0.02</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+    </dependencies>
+</project>

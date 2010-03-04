@@ -1,0 +1,20 @@
+<archetype>
+  <id>maven-liferay-portlet-archetype</id>
+  <sources>
+    <source>src/main/java/JSPPortlet.java</source>
+  </sources>
+ <resources>
+     <resource>src/main/resources/css/empty.css</resource>
+     <resource>src/main/resources/js/empty.js</resource>
+     <resource>src/main/resources/icon.png</resource>
+     <resource>src/main/webapp/WEB-INF/tld/fmt.tld</resource>
+     <resource>src/main/webapp/WEB-INF/tld/liferay-portlet.tld</resource>
+     <resource>src/main/webapp/WEB-INF/tld/readme.txt</resource>
+     <resource>src/main/webapp/WEB-INF/liferay-display.xml</resource>
+     <resource>src/main/webapp/WEB-INF/liferay-plugin-package.properties</resource>
+     <resource>src/main/webapp/WEB-INF/liferay-portlet.xml</resource>
+     <resource>src/main/webapp/WEB-INF/portlet.xml</resource>
+     <resource>src/main/webapp/WEB-INF/web.xml</resource>
+     <resource>src/main/webapp/view.jsp</resource>
+ </resources>
+</archetype>

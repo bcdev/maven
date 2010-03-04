@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bc.maven</groupId>
+    <artifactId>maven-liferay-portlet-archetype</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <name>Archetype - maven-liferay-portlet-archetype</name>
+    <url>http://maven.apache.org</url>
+
+    <repositories>
+        <repository>
+            <id>JBoss</id>
+            <url>http://repository.jboss.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.portlet</groupId>
+            <artifactId>portlet-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <debug>true</debug>
+                    <encoding>ISO-8859-1</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

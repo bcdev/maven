@@ -1,0 +1,56 @@
+<project name="install4j">
+
+    <property file="${basedir}/build.properties"/>
+
+<!-- todo - does not function! For some reason ant wants to load "./build.xml"
+    <target name="compile" depends="dump-properties">
+        <condition property="compiler.ok">
+            <and>
+                <isset property="install4j.compiler"/>
+                <isset property="install4j.project"/>
+                <not>
+                    <isset property="install4j.release"/>
+                </not>
+            </and>
+        </condition>
+        <condition property="compiler.ok.release">
+            <and>
+                <isset property="install4j.compiler"/>
+                <isset property="install4j.project"/>
+                <isset property="install4j.release"/>
+            </and>
+        </condition>
+        <antcall target="exec-compiler"/>
+        <antcall target="exec-compiler-release"/>
+    </target>
+-->
+
+    <target name="compile" depends="dump-properties">
+        <exec dir="${basedir}" executable="${install4j.compiler}">
+            <arg line="&quot;${install4j.project}&quot;"/>
+        </exec>
+    </target>
+
+    <target name="exec-compiler" if="compiler.ok">
+        <exec dir="${basedir}" executable="${install4j.compiler}">
+            <arg line="&quot;${install4j.project}&quot;"/>
+        </exec>
+    </target>
+
+    <target name="exec-compiler-release" if="compiler.ok.release">
+        <exec dir="${basedir}" executable="${install4j.compiler}">
+            <arg line="&quot;--release=${install4j.release}&quot;"/>
+            <arg line="&quot;${install4j.project}&quot;"/>
+        </exec>
+    </target>
+
+    <target name="dump-properties">
+        <echo>Running install4j compiler with:</echo>
+        <echo>  $${basedir}            = ${basedir}</echo>
+        <echo>  $${user.name}          = ${user.name}</echo>
+        <echo>  $${install4j.compiler} = ${install4j.compiler}</echo>
+        <echo>  $${install4j.project}  = ${install4j.project}</echo>
+        <echo>  $${install4j.release}  = ${install4j.release}</echo>
+    </target>
+
+</project>

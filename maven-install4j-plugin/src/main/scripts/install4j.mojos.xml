@@ -1,0 +1,40 @@
+<pluginMetadata>
+    <mojos>
+        <mojo>
+            <goal>install4jc</goal>
+            <call>compile</call>
+            <description>Compiles a given install4j project file.</description>
+            <parameters>
+
+                <parameter>
+                    <name>install4j.compiler</name>
+                    <property>install4j.compiler</property>
+                    <required>true</required>
+                    <expression>${install4j.compiler}</expression>
+                    <type>java.lang.String</type>
+                    <description>The path to the install4j compiler.</description>
+                </parameter>
+
+                <parameter>
+                    <name>install4j.project</name>
+                    <property>install4j.project</property>
+                    <required>true</required>
+                    <expression>${install4j.project}</expression>
+                    <defaultValue>${project.artifactId}.install4j</defaultValue>
+                    <type>java.lang.String</type>
+                    <description>The path to the install4j project.</description>
+                </parameter>
+
+                <parameter>
+                    <name>install4j.release</name>
+                    <property>install4j.release</property>
+                    <required>false</required>
+                    <expression>${install4j.release}</expression>
+                    <type>java.lang.String</type>
+                    <description>An optional release string. Overrides version of project file.</description>
+                </parameter>
+
+            </parameters>
+        </mojo>
+    </mojos>
+</pluginMetadata>
