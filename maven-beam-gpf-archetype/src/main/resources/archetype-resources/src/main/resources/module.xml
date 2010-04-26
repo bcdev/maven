@@ -41,7 +41,7 @@
             <operatorName>SingleTileOp</operatorName>
             <text>SingleTileOp...</text>
             <dialogTitle>SingleTileOp</dialogTitle>
-            <nameSuffix>_SingleTileOp</nameSuffix>
+            <targetProductNameSuffix>_SingleTileOp</targetProductNameSuffix>
         </action>
 
         <action>
@@ -54,7 +54,7 @@
             <operatorName>MultiTileOp</operatorName>
             <text>MultiTileOp...</text>
             <dialogTitle>MultiTileOp</dialogTitle>
-            <nameSuffix>_MultiTileOp</nameSuffix>
+            <targetProductNameSuffix>_MultiTileOp</targetProductNameSuffix>
         </action>
 
     </extension>
