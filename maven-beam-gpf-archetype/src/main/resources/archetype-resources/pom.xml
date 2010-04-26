@@ -18,8 +18,8 @@
            -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <beam.version>4.7.1</beam.version>
-        <ceres.version>0.10.1</ceres.version>
+        <beam.version>4.8-SNAPSHOT</beam.version>
+        <ceres.version>0.11-SNAPSHOT</ceres.version>
     </properties>
 
 

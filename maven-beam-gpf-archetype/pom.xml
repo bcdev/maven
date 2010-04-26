@@ -3,11 +3,23 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.esa.beam.maven</groupId>
     <artifactId>maven-beam-gpf-archetype</artifactId>
-    <version>4.7.1</version>
+    <version>4.8-SNAPSHOT</version>
     <name>Maven 2 Archetype Plugin for BEAM GPF Operators</name>
     <description>A Maven 2 archetype for projects using BEAM Graph Processing Framework (GPF).</description>
     <url>http://envisat.esa.int/beam</url>
     <packaging>maven-plugin</packaging>
+
+    <properties>
+        <!--
+           In version 3.0 of Maven the sourceEncoding property will be embedded in the
+           build tag. For now the convention is to that it as property.
+           TODO: Move the sourceEncoding property to the build tag if version 3.0 is released
+           -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <beam.version>4.8-SNAPSHOT</beam.version>
+        <ceres.version>0.11-SNAPSHOT</ceres.version>
+    </properties>    
 
     <dependencies>
 
@@ -21,19 +33,19 @@
         <dependency>
             <groupId>com.bc.ceres</groupId>
             <artifactId>ceres-core</artifactId>
-            <version>0.10.1</version>
+            <version>${ceres.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.beam</groupId>
             <artifactId>beam-core</artifactId>
-            <version>4.7.1</version>
+            <version>${beam.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.beam</groupId>
             <artifactId>beam-gpf</artifactId>
-            <version>4.7.1</version>
+            <version>${beam.version}</version>
         </dependency>
 
     </dependencies>
