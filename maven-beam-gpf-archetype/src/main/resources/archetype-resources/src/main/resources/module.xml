@@ -6,7 +6,6 @@
 
     <!-- TODO - As needed, adapt metadata elements here -->
     <description>BEAM ${artifactId}</description>
-    <description>This module provides the operators SingleTileOp and MultiTileOp</description>
     <vendor>Brockmann Consult GmbH</vendor>
     <contactAddress>Max Planck Str.2, 21502 Geesthacht (Germany)</contactAddress>
     <copyright>(C) 2010 by Brockmann Consult GmbH</copyright>
