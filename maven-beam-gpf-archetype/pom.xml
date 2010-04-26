@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.esa.beam.maven</groupId>
     <artifactId>maven-beam-gpf-archetype</artifactId>
-    <version>4.7-SNAPSHOT</version>
+    <version>4.7.1</version>
     <name>Maven 2 Archetype Plugin for BEAM GPF Operators</name>
     <description>A Maven 2 archetype for projects using BEAM Graph Processing Framework (GPF).</description>
     <url>http://envisat.esa.int/beam</url>
@@ -21,19 +21,19 @@
         <dependency>
             <groupId>com.bc.ceres</groupId>
             <artifactId>ceres-core</artifactId>
-            <version>0.10-SNAPSHOT</version>
+            <version>0.10.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.beam</groupId>
             <artifactId>beam-core</artifactId>
-            <version>4.7-SNAPSHOT</version>
+            <version>4.7.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.esa.beam</groupId>
             <artifactId>beam-gpf</artifactId>
-            <version>4.7-SNAPSHOT</version>
+            <version>4.7.1</version>
         </dependency>
 
     </dependencies>
