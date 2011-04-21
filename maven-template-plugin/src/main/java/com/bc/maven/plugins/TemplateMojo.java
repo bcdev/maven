@@ -3,6 +3,7 @@ package com.bc.maven.plugins;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.model.FileSet;
+import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.DirectoryScanner;
 
 import java.io.File;
@@ -29,14 +30,14 @@ import java.text.MessageFormat;
  */
 public class TemplateMojo extends AbstractMojo {
 
-//    /**
-//     * Project instance, to which we want to add an attached artifact.
-//     *
-//     * @parameter expression=”${project}”
-//     * @required
-//     * @readonly
-//     */
-//    private MavenProject project;
+    /**
+     * Project instance, to which we want to add an attached artifact.
+     *
+     * @parameter default-value="${project}"
+     * @required
+     * @readonly
+     */
+    private MavenProject project;
 //
 //    /**
 //     * This helper class makes adding an artifact attachment simpler.
@@ -93,6 +94,7 @@ public class TemplateMojo extends AbstractMojo {
             properties.put("sourceExtension", getExtension(sourceFileName));
             String outputFileName = createOutpuFileName(outputFileNamePattern, properties);
             File outputFile = new File(outputDirectory, outputFileName);
+            properties.putAll(project.getProperties());
             process(sourceTemplate, outputFile, template.getLineEnding(), properties);
         }
     }
@@ -145,7 +147,8 @@ public class TemplateMojo extends AbstractMojo {
         return files;
     }
 
-    private void process(File source, File outputFile, String lineEnding, Properties properties) throws MojoExecutionException {
+    private void process(File source, File outputFile, String lineEnding, Properties properties) throws
+                                                                                                 MojoExecutionException {
         getLog().debug("Creating " + outputFile);
         FileReader fr = null;
         FileWriter fw = null;
@@ -231,14 +234,16 @@ public class TemplateMojo extends AbstractMojo {
                 throw new MojoExecutionException("Missing <templates>/<template>/<source>");
             }
             if (!source.exists()) {
-                throw new MojoExecutionException(MessageFormat.format("Template source not found: {0} (cwd={1})", source, cwd));
+                throw new MojoExecutionException(
+                        MessageFormat.format("Template source not found: {0} (cwd={1})", source, cwd));
             }
             if (template.getFilterSet() == null) {
                 throw new MojoExecutionException("Missing <templates>/<template>/<filterSet>");
             }
             final File dir = new File(template.getFilterSet().getDirectory());
             if (!dir.exists()) {
-                throw new MojoExecutionException(MessageFormat.format("Filters directory not found: {0} (cwd={1})", dir, cwd));
+                throw new MojoExecutionException(
+                        MessageFormat.format("Filters directory not found: {0} (cwd={1})", dir, cwd));
             }
         }
     }
