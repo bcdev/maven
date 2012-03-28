@@ -1,3 +1,9 @@
+
+<!--
+    Maven install4j Plug-In
+    Author: Norman
+-->
+
 <pluginMetadata>
     <mojos>
         <mojo>

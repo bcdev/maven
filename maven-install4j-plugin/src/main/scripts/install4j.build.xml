@@ -1,3 +1,8 @@
+<!--
+    Maven install4j Plug-In
+    Author: Norman
+-->
+
 <project name="install4j">
 
     <property file="${basedir}/build.properties"/>
@@ -26,19 +31,19 @@
 -->
 
     <target name="compile" depends="dump-properties">
-        <exec dir="${basedir}" executable="${install4j.compiler}">
+        <exec dir="${basedir}" executable="${install4j.compiler}" failonerror="true">
             <arg line="&quot;${install4j.project}&quot;"/>
         </exec>
     </target>
 
     <target name="exec-compiler" if="compiler.ok">
-        <exec dir="${basedir}" executable="${install4j.compiler}">
+        <exec dir="${basedir}" executable="${install4j.compiler}" failonerror="true">
             <arg line="&quot;${install4j.project}&quot;"/>
         </exec>
     </target>
 
     <target name="exec-compiler-release" if="compiler.ok.release">
-        <exec dir="${basedir}" executable="${install4j.compiler}">
+        <exec dir="${basedir}" executable="${install4j.compiler}"  failonerror="true">
             <arg line="&quot;--release=${install4j.release}&quot;"/>
             <arg line="&quot;${install4j.project}&quot;"/>
         </exec>
