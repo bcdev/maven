@@ -13,12 +13,14 @@
     </description>
 
     <modules>
-        <module>maven-beam-dataio-archetype</module>
-        <module>maven-beam-gpf-archetype</module>
         <module>maven-install4j-plugin</module>
         <module>maven-javahelp-plugin</module>
         <module>maven-liferay-portlet-archetype</module>
         <module>maven-template-plugin</module>
+
+        <!--Not working any more-->
+        <!--<module>maven-beam-dataio-archetype</module>-->
+        <!--<module>maven-beam-gpf-archetype</module>-->
     </modules>
 
 
